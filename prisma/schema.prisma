@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id                    Int                 @id @default(autoincrement())
+  email                 String              @unique
+  password              String
+
+  @@map("users")
+}
+
+model Tests {
+  id                    Int                 @id @default(autoincrement())
+  name                  String
+  pdfUrl                String
+  categoryId            Int
+  teacherDisciplineId   Int
+
+  Categories            Categories          @relation(fields: [categoryId], references: [id])
+  TeacherDisciplines    TeacherDisciplines  @relation(fields: [teacherDisciplineId], references: [id])
+
+  @@map("tests")
+}
+
+model Categories {
+  id                    Int                 @id @default(autoincrement())
+  name                  String              @unique
+
+  Tests                 Tests[]
+
+  @@map("categories")
+}
+
+model Teachers {
+  id                    Int                 @id @default(autoincrement())
+  name                  String              @unique
+
+  TeacherDisciplines    TeacherDisciplines[]
+
+  @@map("teachers")
+}
+
+model Terms {
+  id                    Int                 @id @default(autoincrement())
+  number                Int                 @unique
+
+  Disciplines           Disciplines[]
+
+  @@map("terms")
+}
+
+model Disciplines {
+  id                    Int                 @id @default(autoincrement())
+  name                  String              @unique
+  termId                Int
+
+  Terms                 Terms               @relation(fields: [termId], references: [id])
+  TeacherDisciplines    TeacherDisciplines[]
+
+  @@map("disciplines")
+}
+
+model TeacherDisciplines {
+  id                    Int                 @id @default(autoincrement())
+  teacherId             Int
+  disciplineId          Int
+
+  Tests                 Tests[]
+  Teachers              Teachers            @relation(fields: [teacherId], references: [id])
+  Disciplines           Disciplines         @relation(fields: [disciplineId], references: [id])
+
+  @@map("teacherDisciplines")
+}
