@@ -27,3 +27,49 @@ export async function create ({name, pdfUrl, categoryId, teacherDisciplineId}: C
         }
     })
 }
+
+export async function viewsByDisciplines () {
+    return prisma.terms.findMany({
+        include: {
+            Disciplines: {
+                include: {
+                    TeacherDisciplines: {
+                        include: {
+                            Teachers: true,
+                            Tests: {
+                                include: {
+                                    Categories: true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })
+}
+
+export async function viewsByTeachers () {
+    return prisma.teachers.findMany({
+        include: {
+            TeacherDisciplines: {
+                include: {
+                    Disciplines: {
+                        include: {
+                            TeacherDisciplines: {
+                                include: {
+                                    Tests: {
+                                        include: {
+                                            Categories: true
+                                        }
+                                    }
+                                }
+                            },
+                            Terms: true
+                        }
+                    }
+                }
+            }
+        }
+    })
+}

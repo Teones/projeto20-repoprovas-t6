@@ -17,3 +17,19 @@ export async function create (test: CreateTestsData, token: string) {
     const create = await repositories.create(test);
     return create
 };
+
+export async function viewsByDisciplines (token: string) {
+    await verifyToken(token);
+
+    const viewsByDisciplines = await repositories.viewsByDisciplines();
+
+    return viewsByDisciplines
+}
+
+export async function viewsByTeachers (token: string) {
+    await verifyToken(token);
+    
+    const viewsByTeachers = await repositories.viewsByTeachers();
+
+    return viewsByTeachers;
+}
