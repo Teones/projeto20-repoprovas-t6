@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-import { CreateUserData } from "../services/authServices.js";
+import { CreateUserData } from "../services/authServices";
 
 const signUpSchema = Joi.object({
     email: Joi.string().email().required(),

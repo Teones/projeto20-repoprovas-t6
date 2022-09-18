@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
-import * as userSchema from "../schemas/authSchemas.js"
+import * as userSchema from "../schemas/authSchemas"
 
 export function validateSignUp (req: Request, res: Response, next: NextFunction) {
     const user = req.body;

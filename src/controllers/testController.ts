@@ -1,17 +1,17 @@
 import { Request, Response } from "express";
 
-import * as services from "../services/testServices.js"
+import * as services from "../services/testServices"
 
 export async function create (req: Request, res: Response) {
     const token = req.headers["token"] as string
-    if(!token) { throw { type: "not_found" } };
+    if(!token) { throw { type: "not_found", message: "token não encontrado" } };
 
     const test: services.CreateTestsData = req.body;
     if(!test.name || !test.pdfUrl || !test.categoryId || !test.teacherDisciplineId) {
-        throw { type: "not_found" } ;
+        throw { type: "not_found", message: "formato inválido" } ;
     };
     if(typeof(test.categoryId) !== "number" || typeof(test.teacherDisciplineId) !== "number") {
-        throw { type: "not_found" };
+        throw { type: "not_found", message: "categoryId não é um número" };
     }
 
     const create = await services.create(test, token);

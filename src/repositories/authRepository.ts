@@ -1,5 +1,5 @@
-import { prisma } from "../config/db.js"
-import { CreateUserData } from "../services/authServices.js"
+import { prisma } from "../config/db"
+import { CreateUserData } from "../services/authServices"
 
 export async function findByEmail({email}: CreateUserData) {
     return prisma.users.findFirst({

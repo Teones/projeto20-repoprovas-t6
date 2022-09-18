@@ -3,7 +3,7 @@ export type CreateUserData = Omit<Users, "id">;
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 
-import * as repositories from "../repositories/authRepository.js"
+import * as repositories from "../repositories/authRepository"
 
 export async function SignUp(user: CreateUserData) {
     const findByEmail = await repositories.findByEmail(user);   
@@ -30,5 +30,5 @@ export async function SignIn(user: CreateUserData) {
     const JWT = process.env.JWT;
     const token = jwt.sign({userId}, JWT);
 
-    return token
+    return {token: token}
 }

@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
-import * as testsSchema from "../schemas/testSchema.js";
+import * as testsSchema from "../schemas/testSchema";
 
 export function validateTest (req: Request, res: Response, next: NextFunction) {
     const test = req.body;

@@ -1,7 +1,7 @@
 import { Tests } from "@prisma/client";
 
-import { verifyToken } from "../utils/authenticationUtils.js";
-import * as repositories from "../repositories/testRepository.js" 
+import { verifyToken } from "../utils/authenticationUtils";
+import * as repositories from "../repositories/testRepository" 
 
 export type CreateTestsData = Omit<Tests, "id">;
 

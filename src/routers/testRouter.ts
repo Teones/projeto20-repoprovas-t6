@@ -1,7 +1,7 @@
 import { Router } from "express";
 
-import * as middlewares from "../middlewares/testMiddlewares.js";
-import * as controllers from "../controllers/testController.js"
+import * as middlewares from "../middlewares/testMiddlewares";
+import * as controllers from "../controllers/testController"
 
 const testRouter = Router();
 testRouter.post("/tests", middlewares.validateTest, controllers.create);

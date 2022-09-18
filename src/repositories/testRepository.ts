@@ -1,5 +1,5 @@
-import { prisma } from "../config/db.js";
-import { CreateTestsData } from "../services/testServices.js";
+import { prisma } from "../config/db";
+import { CreateTestsData } from "../services/testServices";
 
 export async function findByTeacherId ({teacherDisciplineId}: CreateTestsData) {
     return prisma.teacherDisciplines.findUnique({

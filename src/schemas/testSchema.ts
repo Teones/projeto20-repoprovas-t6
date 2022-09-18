@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-import { CreateTestsData } from "../services/testServices.js";
+import { CreateTestsData } from "../services/testServices";
 
 const testsCreatedSchema = Joi.object<CreateTestsData>({
     name: Joi.string().required(),
