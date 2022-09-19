@@ -7,6 +7,7 @@ export async function create (req: Request, res: Response) {
     if(!token) { throw { type: "not_found", message: "token não encontrado" } };
 
     const test: services.CreateTestsData = req.body;
+    console.log(test)
     if(!test.name || !test.pdfUrl || !test.categoryId || !test.teacherDisciplineId) {
         throw { type: "not_found", message: "formato inválido" } ;
     };

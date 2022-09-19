@@ -16,7 +16,7 @@ import token from "./auth.test"
 const name =  faker.lorem.words(3);
 const pdfUrl = faker.internet.url();
 const categoryId = faker.datatype.number({max: 3});
-const teacherDisciplineId = faker.datatype.number(1);
+const teacherDisciplineId = faker.datatype.number({min: 1, max: 6});
 
 describe("POST /tests", () => {
     it("should answer with status 201 when test created", async () => {
@@ -26,6 +26,7 @@ describe("POST /tests", () => {
             categoryId: Number(categoryId),
             teacherDisciplineId: Number(teacherDisciplineId)
         }
+        console.log(item)
 
         const response = await supertest(app)
             .post("/tests")
