@@ -26,7 +26,6 @@ describe("POST /tests", () => {
             categoryId: Number(categoryId),
             teacherDisciplineId: Number(teacherDisciplineId)
         }
-        console.log(item)
 
         const response = await supertest(app)
             .post("/tests")
