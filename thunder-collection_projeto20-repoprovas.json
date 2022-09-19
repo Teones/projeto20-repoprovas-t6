@@ -1,0 +1,124 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "projeto20-repoprovas",
+    "dateExported": "2022-09-19T14:29:13.419Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "989ba46f-f502-445a-8bca-723d6ed5433f",
+            "name": "users",
+            "containerId": "",
+            "created": "2022-07-22T22:35:34.958Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "3693843a-d0fa-4612-8c84-9a791a798af7",
+            "name": "tests",
+            "containerId": "",
+            "created": "2022-07-24T03:24:15.372Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "34350088-6d4a-4842-a59b-c36f27ecebb8",
+            "colId": "c3e3fd80-636b-4c79-be76-eb238a444e7a",
+            "containerId": "989ba46f-f502-445a-8bca-723d6ed5433f",
+            "name": "sign-up",
+            "url": "{{url}}/sign-up",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2022-07-22T22:35:54.956Z",
+            "modified": "2022-09-15T15:14:08.313Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"admin2@admin.com\",\n    \"password\": \"admin\",\n    \"confirmPassword\": \"admin\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fc4533e3-2a47-44a4-8aff-55df162904d5",
+            "colId": "c3e3fd80-636b-4c79-be76-eb238a444e7a",
+            "containerId": "989ba46f-f502-445a-8bca-723d6ed5433f",
+            "name": "sign-In",
+            "url": "{{url}}/sign-in",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2022-07-22T23:19:30.546Z",
+            "modified": "2022-09-15T15:34:16.974Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"admin@admin.com\",\n    \"password\": \"admin\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0e4a4394-2616-43bc-9b47-ae573c8dfb1c",
+            "colId": "c3e3fd80-636b-4c79-be76-eb238a444e7a",
+            "containerId": "3693843a-d0fa-4612-8c84-9a791a798af7",
+            "name": "add test",
+            "url": "{{url}}/tests",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2022-07-24T03:24:23.422Z",
+            "modified": "2022-09-15T17:08:59.208Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MzI2MTY1NX0.ldVXy9lW7XUJpQp4BwNXpls7jv3pf-2-_pZ2sG5ff38"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Primeira Prova Registrada\",\n    \"pdfUrl\": \"http://teste.com\",\n    \"categoryId\": 1,\n    \"teacherDisciplineId\": 2\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "90637566-2e34-4d77-b706-5a66146807b8",
+            "colId": "c3e3fd80-636b-4c79-be76-eb238a444e7a",
+            "containerId": "3693843a-d0fa-4612-8c84-9a791a798af7",
+            "name": "get tests by disciplines",
+            "url": "{{url}}/tests/disciplines",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2022-07-24T04:57:57.469Z",
+            "modified": "2022-09-15T17:30:08.698Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MzI2MTY1NX0.ldVXy9lW7XUJpQp4BwNXpls7jv3pf-2-_pZ2sG5ff38"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d5ed8a56-0613-481e-b2a9-6e6f5fc30666",
+            "colId": "c3e3fd80-636b-4c79-be76-eb238a444e7a",
+            "containerId": "3693843a-d0fa-4612-8c84-9a791a798af7",
+            "name": "get tests by teachers",
+            "url": "{{url}}/tests/teachers",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2022-09-15T18:00:33.553Z",
+            "modified": "2022-09-15T18:01:51.435Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MzI2MTY1NX0.ldVXy9lW7XUJpQp4BwNXpls7jv3pf-2-_pZ2sG5ff38"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
